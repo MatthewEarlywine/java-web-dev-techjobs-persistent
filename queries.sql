@@ -14,6 +14,7 @@ drop table job;
 
 ## Part 4: Test it with SQL
 
-select name, description
-from skill
-order by name asc
+Select name, description, id, jobs_id
+From skill
+Left Outer Join job_skills on skill.id = job_skills.skills_id
+Where job_skills.jobs_id is not null;
